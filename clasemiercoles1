@@ -1,0 +1,21 @@
+archivo1<- readRNAStringSet("GENOMICA/first.fasta")
+archivo1
+traduccion<- translate(archivo1)
+traduccion
+#2.0 PROBLEMAS DE ROSALINDs
+secuencia<- DNAString("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+secuencia
+##  Calcular la longitud de la secuencia : 
+longitud<- length(secuencia)
+longitud
+#para conocer la frecuencia de cada nucleótido 
+frecuenciaA<- letterFrequency(secuencia, "A")
+frecuenciaA ##20 repeticiones de A en la secuencia 
+frecienciaG<- letterFrequency(secuencia, "G")
+frecienciaG##17 repeticiones de G 
+frecuenciaT<- letterFrequency(secuencia, "T")
+frecuenciaT<- ##21 repeticiones de T en la secuencia 
+frecuenciaC<- letterFrequency(secuencia, "C")
+frecuenciaC ##12 repeticiones de C 
+
+
