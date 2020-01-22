@@ -1,0 +1,106 @@
+#2.0 PROBLEMAS DE ROSALIND 
+#P1. CON LIBRERIA ESPECIALIZADA 
+secuencia<- DNAString("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+secuencia
+##  Calcular la longitud de la secuencia : 
+longitud<- length(secuencia)
+longitud
+#para conocer la frecuencia de cada nucleótido 
+frecuenciaA<- letterFrequency(secuencia, "A")
+frecuenciaA ##20 repeticiones de A en la secuencia 
+frecienciaG<- letterFrequency(secuencia, "G")
+frecienciaG##17 repeticiones de G 
+frecuenciaT<- letterFrequency(secuencia, "T")
+frecuenciaT<- ##21 repeticiones de T en la secuencia 
+frecuenciaC<- letterFrequency(secuencia, "C")
+frecuenciaC ##12 repeticiones de C 
+
+
+##P1. SIN LIBRERIA ESPECIALIZADA 
+#genero mi vector (este será nuevo y más pequeño, para mi comodidad)
+secuenciap1<-c("A","G","C","T","T","T","T","C", "A","T","T","A","G","C","T","T","T","T","C", "A","T","T" )
+##calculo el tamaño de la secuencia con la funcion "lenght"
+x<- as.vector(secuenciap1)
+x
+tamaño<- length(x)
+tamaño
+#El tamaño de la secuencia son 22 nucleotidos 
+
+#Para conocer la secuencia de cada nucleótido, le asigno valores numéricos a los nucleotidos 
+v1<- if (x[c(1)] == "A") {
+  print("1")} else {
+    print ("O")
+  }
+v1
+
+#ciclo for 
+ #hago un ciclo for para que me indique la frecuencia de las letras en la secuencia, marcando como 0 y 1
+#creo "e" para obtener un vector de respuestas 
+#FRECUENCIA DE A 
+e=NULL
+cicloA<- for (i in 1:tamaño){ 
+  r<- if  (x[i] == "A") { 
+   print ("1")} else {
+   print ("O")}; e<- c(e, r) } 
+
+e##nos da la frecuencia de cuantas "A"/"1" hay, pero no hay un número 
+result<- as.numeric(e)
+result
+##para eliminar los NA del vector
+s <- result[is.na(result) == F]
+s
+##sumamos los elementos del vector y obtenemos nuestro número de nucleótidos repetidos 
+final<-sum(s)
+final ##Tenemos 4 "A" en la secuencia 
+##Repetimos el procedimiento anterior para los otros 3 nucleotidos 
+#FRECUENCIA DE G 
+e=NULL
+cicloA<- for (i in 1:tamaño){ 
+  r<- if  (x[i] == "G") { 
+    print ("1")} else {
+      print ("O")}; e<- c(e, r) } 
+
+e##nos da la frecuencia de cuantas "G"/"1" hay, pero no hay un número 
+result<- as.numeric(e)
+result
+##para eliminar los NA del vector
+s <- result[is.na(result) == F]
+s
+##sumamos los elementos del vector y obtenemos nuestro número de nucleótidos repetidos 
+final<-sum(s)
+final ##Tenemos 2 "G" en nuestra secuencia 
+
+## FRECUENCIA DE C 
+e=NULL
+cicloA<- for (i in 1:tamaño){ 
+  r<- if  (x[i] == "C") { 
+    print ("1")} else {
+      print ("O")}; e<- c(e, r) } 
+
+e##nos da la frecuencia de cuantas "C"/"1" hay, pero no hay un número 
+result<- as.numeric(e)
+result
+##para eliminar los NA del vector
+s <- result[is.na(result) == F]
+s
+##sumamos los elementos del vector y obtenemos nuestro número de nucleótidos repetidos 
+final<-sum(s)
+final ##Tenemos 4 "C" en la secuencia 
+
+#FRECUENCIA DE T
+e=NULL
+cicloA<- for (i in 1:tamaño){ 
+  r<- if  (x[i] == "T") { 
+    print ("1")} else {
+      print ("O")}; e<- c(e, r) } 
+
+e##nos da la frecuencia de cuantas "T"/"1" hay, pero no hay un número 
+result<- as.numeric(e)
+result
+##para eliminar los NA del vector
+s <- result[is.na(result) == F]
+s
+##sumamos los elementos del vector y obtenemos nuestro número de nucleótidos repetidos 
+final<-sum(s)
+final ##Tenemos 12 "T" en la secuencia, es la mayor cantidad 
+
