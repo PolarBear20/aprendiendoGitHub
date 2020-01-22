@@ -1,0 +1,16 @@
+##P2 con libreria especializada | Computing GC Content 
+#cargar la secuencia en formato FASTA 
+fasta<- readDNAStringSet("GENOMICA/rosalind.txt")
+fasta
+##para calcular el porcentaje de G|C
+porcentaje<- letterFrequency(fasta, "CG", as.prob = TRUE) #frecuencia de G|C en la secuencia 
+porcentaje
+respuesta<- porcentaje*100 #lo multiplicamos por 100 para calcular el porcentaje 
+
+respuesta ## C|G
+#[1,] 53.75000
+#[2,] 53.57143
+#[3,] 60.91954
+
+
+
